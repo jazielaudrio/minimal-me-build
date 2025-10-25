@@ -1,5 +1,6 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Orb from './Orb.tsx';
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -11,7 +12,15 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-[var(--gradient-subtle)]" />
+      {/* Orb Component taking full screen */}
+      <div style={{ position: 'absolute', inset: '0', width: '100%', height: '100%' }}>
+        <Orb
+          hoverIntensity={0.5}
+          rotateOnHover={true}
+          hue={0}
+          forceHoverState={false}
+        />
+      </div>
       
       {/* Animated background elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
